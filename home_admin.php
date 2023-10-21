@@ -112,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <td class='border px-4 py-2'>
                                     <form method='post'>
                                         <button type='submit' name='delete' value='$email' class='bg-red-500 text-white px-3 py-1 rounded-full mr-2'>
-                                            <i class='fas fa-trash'></i> Delete
+                                      Delete
                                         </button>
                                     </form>
                                 </td>
@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         data-firstname='$firstname'
                                         data-lastname='$lastname'
                                         data-age='$age'>
-                                        <i class='fas fa-edit'></i> Edit
+                                     Edit
                                     </button>
                                 </td>
                               </tr>";
@@ -132,6 +132,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </tbody>
         </table>
     </div>
+
+
 
     <div id="createModal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
         <div class="modal-content bg-white p-4 rounded shadow-lg">
@@ -154,12 +156,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="text" class="form-input w-full px-4 py-2 rounded border border-gray-300" name="firstname" id="createFirstname" placeholder="First Name" required><br><br>
                 <input type="text" class="form-input w-full px-4 py-2 rounded border border-gray-300" name="lastname" id="createLastname" placeholder="Last Name" required><br><br>
                 <input type="number" class="form-input w-full px-4 py-2 rounded border border-gray-300" name="age" id="createAge" placeholder="Age" required><br><br>
-                <button type="submit" name="create" class="bg-green-500 text-white px-2 py-1 rounded-full mr-2">
-                    Create User
-                </button>
+    
+
+<button type="submit" name="create" class="bg-green-500 text-white px-2 py-1 rounded-full mr-2">
+    Create User
+</button>
+
+<button type="button" class="bg-red-500 text-white px-2 py-1 rounded-full mr-2 modal-close-create">
+    Close
+</button>
+
             </form>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
 
     <div id="editModal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
       <div class="modal-content bg-white p-4 rounded shadow-lg">
@@ -181,28 +199,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <input type="text"   class="form-input w-full px-4 py-2 rounded border border-gray-300"  name="firstname" id="editFirstname" placeholder="First Name" required><br><br>
           <input type="text" class="form-input w-full px-4 py-2 rounded border border-gray-300" name="lastname" id="editLastname" placeholder="Last Name" required><br><br>
           <input type="number" class="form-input w-full px-4 py-2 rounded border border-gray-300" name="age" id="editAge" placeholder="Age" required><br><br>
-          <button type="submit" name="update" class="bg-blue-500 text-white px-2 py-1 rounded-full mr-2">
-            Update
-          </button>
-        </form>
+  
+
+<button type="submit" name="update" class="bg-blue-500 text-white px-2 py-1 rounded-full mr-2">
+    Update
+</button>
+  </form>
       </div>
     </div>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const editButtons = document.querySelectorAll('.edit-button');
-        const createButton = document.querySelector('.btn-create');
-        const editModal = document.getElementById('editModal');
-        const createModal = document.getElementById('createModal');
-        const closeModalEdit = document.querySelector('.modal-close');
-        const closeModalCreate = document.querySelector('.modal-close-create');
-        const editForm = document.getElementById('editForm');
-        const createForm = document.getElementById('createForm');
+    document.addEventListener("DOMContentLoaded", function() {
+    const editButtons = document.querySelectorAll('.edit-button');
+    const createButton = document.querySelector('.btn-create');
+    const editModal = document.getElementById('editModal');
+    const createModal = document.getElementById('createModal');
 
-        editButtons.forEach(button => {
-          button.addEventListener('click', function() {
+    const closeModalCreate = document.querySelector('.modal-close-create');
+    const editForm = document.getElementById('editForm');
+    const createForm = document.getElementById('createForm');
+
+    editButtons.forEach(button => {
+        button.addEventListener('click', function() {
             const email = button.dataset.email;
             const role = button.dataset.role;
             const firstname = button.dataset.firstname;
@@ -219,26 +239,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           });
         });
 
+
         createButton.addEventListener('click', function() {
-            createModal.classList.remove('hidden');
-        });
+        createModal.classList.remove('hidden');
+    });
 
-        closeModalEdit.addEventListener('click', function() {
-          editModal.classList.add('hidden');
-        });
+    closeModalEdit.addEventListener('click', function() {
+        editModal.classList.add('hidden');
+    });
 
-        closeModalCreate.addEventListener('click', function() {
-            createModal.classList.add('hidden');
-        });
+    closeModalCreate.addEventListener('click', function() {
+        createModal.classList.add('hidden');
+    });
 
-        editForm.addEventListener('submit', function() {
-          editModal.classList.add('hidden');
-        });
+    editForm.addEventListener('submit', function() {
+        editModal.classList.add('hidden');
+    });
 
-        createForm.addEventListener('submit', function() {
-            createModal.classList.add('hidden');
-        });
-      });
+    createForm.addEventListener('submit', function() {
+        createModal.classList.add('hidden');
+    });
+});
+   
+       
     </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
-user, rezoanulhasan996@gmail.com, 1, REZOANUL, Riad, 10
 admin, rezoanulhasan96@gmail.com, 1, REZOANUL, HASAN, 25
-manager, nazimsarker@gmail.com, 1, Nazim, Sarker, 22
 user, rifatriad2012@gmail.com, 1, RIFAT, HASAN, 21
 user, test@gmail.com, 1, Test, test, 22
+manager, nazimsarker@gmail.com, 1, Nazim, Sarker, 42
+manager, rezoanulhasan996@gmail.com, 1, REZOANUL, HASAN, 32
